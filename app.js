@@ -22,6 +22,12 @@ prevButton.addEventListener("click", function (e) {
 });
 
 function slideAway() {
+  if (counter < 0) {
+    counter = slides.length - 1;
+  }
+
+  counter = counter % slides.length;
+
   slides.forEach(function (slide) {
     slide.style.transform = `translateX(-${counter * 100}%)`;
   });
